@@ -1,15 +1,8 @@
 #Python program to find LCA of node and node2 using a simple tree travesal in bottom to up fashion.
-#Program assumes that the nodes are present in the tree
-#import lca_test
-class Node:
-    #Constructor for creating binary tree
-    def __init__(self,value):
-        self.value  = value
-        self.left = None
-        self.right = None
-    # Function that returns pointer of LCA of two nodes
-    # found1 is set as true by this function if node1 is found
-    # found2 is set as true by this function if node2 is found
+
+# Function that returns pointer of LCA of two nodes
+# found1 is set as true by this function if node1 is found
+# found2 is set as true by this function if node2 is found
 def findLCAUtil(root, node1, node2, found):
     if root is None:    #Base Case
         return None
@@ -28,7 +21,8 @@ def findLCAUtil(root, node1, node2, found):
         return root
 
     return left_lca if left_lca is not None else right_lca # Otherwise check if left or right subtree is lCA
-
+    
+#Function that returns true/false if the node is present
 def find(root, k):
 
     # Base Case
