@@ -13,4 +13,12 @@ class TestLca:
         root.right.right = Node(7)
 
         lca1 = lca.findLCA(root, 4, 5)
-        assert lca1.value is 2
+        assert lca1.value is 2, "test_basic failed"
+
+    def test_null(self): # Test case with empty tree
+        root = None
+
+        lca1 = lca.findLCA(root, 4, 5)
+        assert lca1 is None, "test_null failed"
+
+    
