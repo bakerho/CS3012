@@ -74,6 +74,16 @@ class TestLca:
 
         lca1 = lca.findLCA(root, 102, 101)
         assert lca1.value is 5, "test_left_right_node failed"
-    #def test_two_nodes_with_equal_keys(self): # Test case with two nodes of equal keys
 
+    def test_two_nodes_with_equal_keys(self): # Test case with two nodes of equal keys
+        root = Node(1)
+        root.left = Node(2)
+        root.right = Node(3)
+        root.left.left = Node(4)
+        root.left.right = Node(5)
+        root.right.left = Node(3)
+        root.right.right = Node(7)
+
+        lca1 = lca.findLCA(root, 3, 3)
+        assert lca1.value is 3, "test_two_nodes_with_equal_keys failed"
     #def test_three_nodes_with_equal_keys(self): # Test case with three nodes of equal keys, but only need to find two
