@@ -36,9 +36,14 @@ class TestLca:
         node1 = lca.find(root,4) #Test each node indivdually
         assert node1 is True, "test_nonpresent_node node1 failed"
         node2 = lca.find(root,8)
-        assert node2 is False, "test_nonpresent_node node1 failed"
+        assert node2 is False, "test_nonpresent_node node2 failed"
 
-    #def test_root_node(self):# Test case where root is a node of interest for lca
+    def test_root_node(self):# Test case where root is a node of interest for lca
+        root = Node(2)
+        root.left = Node(1)
+
+        lca1 = lca.findLCA(root, 1, 2)
+        assert lca1.value is 2, "test_root_node failed"
 
     #def test_lowest_ndde (self): # Test case with one of the lowest nodes in tree
 
