@@ -59,8 +59,21 @@ class TestLca:
         lca1 = lca.findLCA(root, 0, 100)
         assert lca1.value is 5, "test_lowest_node failed"
 
-    #def test_left_right_node (self): # Test case with one node in the furthest left tree and the other in the furthest right tree
+    def test_left_right_node (self): # Test case with one node in the furthest left tree and the other in the furthest right tree
+        root = Node(5)
+        root.left = Node(2)
+        root.right = Node(9)
+        root.left.left = Node(6)
+        root.left.right = Node(4)
+        root.left.left.left = Node(10)
+        root.left.left.left.left = Node(101)
+        root.right.right = Node(7)
+        root.right.left = Node(3)
+        root.right.right.right = Node(11)
+        root.right.right.right.right = Node(102)
 
+        lca1 = lca.findLCA(root, 102, 101)
+        assert lca1.value is 5, "test_left_right_node failed"
     #def test_two_nodes_with_equal_keys(self): # Test case with two nodes of equal keys
 
     #def test_three_nodes_with_equal_keys(self): # Test case with three nodes of equal keys, but only need to find two
