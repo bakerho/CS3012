@@ -1,7 +1,7 @@
 
 # Cannot traverse paths from root to the two nodes and look for the last equal element, as there is not necessarily a single path to a given node from the root and a node can have multiple parents.
 class Node:
-    def _init_(self,key):
+    def __init__(self,key):
         self.key = key
         self.pred = []  # list of predecessor, before
         self.succ = []  # list of successor, after
