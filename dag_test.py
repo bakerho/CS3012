@@ -21,3 +21,21 @@ class TestDag:
         lca = daglca (node0, node3,node4)
 
         assert lca is 3
+
+    def test_root_node(self):
+        root = Node(1)
+        node1 = Node(2)
+        node2 = Node(3)
+        root.succ = [node1,node2]
+
+        lca = daglca(root, node1,node1)
+
+        assert lca is 2
+
+        lca = daglca(root,node2,root)
+
+        assert lca is 1
+
+        lca = daglca(root, node1, root)
+
+        assert lca is 1

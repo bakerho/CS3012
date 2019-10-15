@@ -27,5 +27,5 @@ def daglca(root, node1,node2):
         if(node1.key > node2.key):
             lca.append(daglca(root,node1.pred[0], node2)) #set depth to 0 and start backtracking
         else:
-            lca.append(daglca(root, n1, n2.pred[0]))
+            lca.append(daglca(root,node1, node2.pred[0]))
     return max(lca)
