@@ -39,3 +39,10 @@ class TestDag:
         lca = daglca(root, node1, root)
 
         assert lca is 1
+
+    def test_null(self):
+        root = None
+
+        lca = daglca(root,1,2)
+
+        assert lca is None
